@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Data;
 using WebApplication2.Models;
@@ -10,6 +11,7 @@ namespace WebApplication2.Controllers
 
     [ApiController]
     [Route("api/[Controller]")]
+    [DisableCors]
     public class PayController : Controller
     {
         private readonly AppDbContext _context;

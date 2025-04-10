@@ -1,11 +1,13 @@
 ﻿using ACBrLib.Boleto;
 using ACBrLib.Core.Boleto;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Boleto;
 namespace WebApplication2.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [DisableCors]
     public class TicketController : Controller
     {
 

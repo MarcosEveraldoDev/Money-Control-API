@@ -3,6 +3,7 @@ using FastReport;
 using FastReport.Data;
 using FastReport.Export.PdfSimple;
 using FastReport.Utils;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Data;
 using WebApplication2.Services;
@@ -11,6 +12,7 @@ namespace WebApplication2.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [DisableCors]
     public class ReportController : Controller
     {
         private readonly AppDbContext _context;

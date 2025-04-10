@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Data;
 using WebApplication2.Services;
 
 namespace WebApplication2.Controllers
 {
+    [DisableCors]
     public class StockController : Controller
     {
 

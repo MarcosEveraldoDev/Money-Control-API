@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ namespace WebApplication2.Controllers
 
     [ApiController]
     [Route("api/[Controller]")]
+    [DisableCors]
     public class AuthController : Controller
     {
         private readonly AppDbContext _context;

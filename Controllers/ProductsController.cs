@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Models.DTOs;
 using WebApplication2.Services;
 
@@ -6,6 +7,7 @@ namespace WebApplication2.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [DisableCors]
     public class ProductsController : Controller
     {
 
