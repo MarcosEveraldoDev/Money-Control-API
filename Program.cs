@@ -2,6 +2,7 @@ using System.Reflection;
 using ACBrLib.Boleto;
 using DocumentFormat.OpenXml.Spreadsheet;
 using HotChocolate;
+using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data;
@@ -9,6 +10,7 @@ using WebApplication2.Interfaces;
 using WebApplication2.Models;
 using WebApplication2.Services;
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -54,8 +56,18 @@ builder.Services.AddTransient<SaleService>();
 builder.Services.AddTransient<ReportService>();
 builder.Services.AddTransient<ACBrBoleto>();
 builder.Services.AddGraphQL().AddQueryType<Query>();
-;
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("https://192.168.0.1",
+                              "https://localhost");
+                      });
+});
+builder.Services.AddAuthentication(
+        CertificateAuthenticationDefaults.AuthenticationScheme)
+    .AddCertificate();
 
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {
@@ -85,10 +97,12 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     await RoleInitialize.InitializeRoles(services);
 
+    app.UseCors(MyAllowSpecificOrigins);
     app.UseHttpsRedirection();
     app.UseStaticFiles();
     app.UseRouting();
     app.UseAuthorization();
+    app.UseAuthentication();
     app.MapControllers();
     app.Run();
 }
