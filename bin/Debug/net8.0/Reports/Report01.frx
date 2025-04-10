@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/31/2025 15:57:13" ReportInfo.Modified="04/01/2025 14:26:31" ReportInfo.CreatorVersion="2025.1.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM7gJFg/iaLrqMhRfGy5lGkzItaF23U0qUofW0PyXqQXcRaYCT5K6bj7pI6kfW38LpJBV44IRuUTKBKoIzx9n7mixLp3214VzDzEgTgkkhmkxmQwi7Bv4WNiottVcZbSMUpbl3oBHEktDCjRczWF3BSR5wUk8b1lPJ5+41ef7ZD3WKYxWfBDgefHL68+oYXsvigbf7rTJGIR1brC2bXIh9A==">
+      <TableDataSource Name="Products" DataType="System.Int32" Enabled="true" TableName="Products">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="Description" DataType="System.String"/>
+        <Column Name="Category" DataType="System.String"/>
+        <Column Name="Price" DataType="System.Decimal"/>
+        <Column Name="Quantity" DataType="System.Int32"/>
+        <Column Name="Unity" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="SaleItems" DataType="System.Int32" Enabled="true" TableName="SaleItems">
+        <Column Name="Id" DataType="System.Int32"/>
+        <Column Name="SaleId" DataType="System.Int32"/>
+        <Column Name="ProductId" DataType="System.Int32"/>
+        <Column Name="Quantity" DataType="System.Int32"/>
+        <Column Name="UnitPrice" DataType="System.Decimal"/>
+        <Column Name="TotalPrice" DataType="System.Decimal"/>
+      </TableDataSource>
+      <TableDataSource Name="Table" DataType="System.Int32" Enabled="true" SelectCommand="SELECT S.ProductId, P.Name, S.Quantity, S.UnitPrice, S.TotalPrice&#13;&#10;FROM &quot;SaleItems&quot; S INNER JOIN &quot;Products&quot; P ON S.ProductId = P.Id &#13;&#10;&#13;&#10;">
+        <Column Name="ProductId" DataType="System.Int32"/>
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="Quantity" DataType="System.Int32"/>
+        <Column Name="UnitPrice" DataType="System.Decimal"/>
+        <Column Name="TotalPrice" DataType="System.Decimal"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text5" Top="9.45" Width="718.2" Height="18.9" Text="Relatorio de Vendas&#13;&#10;" HorzAlign="Center" Font="Arial, 16pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="40.47" Width="718.2" Height="28.35">
+      <TextObject Name="Text2" Width="47.25" Height="18.9" Text="Id" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text1" Left="66.15" Width="94.5" Height="18.9" Text="Nome&#13;&#10;" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text3" Left="434.7" Width="66.15" Height="18.9" Text=" Quant&#13;&#10;&#13;&#10;" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text4" Left="500.85" Width="103.95" Height="18.9" Text="ValorUni" HorzAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text11" Left="633.15" Width="113.4" Height="18.9" Text="Total" Font="Arial, 12pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="71.48" Width="718.2" Height="28.35" Border.Lines="All" DataSource="Table">
+      <TextObject Name="Text6" Width="47.25" Height="28.35" Border.Lines="All" Text="[Table.ProductId]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="47.25" Width="378" Height="28.35" Border.Lines="All" Text="[Table.Name]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="425.25" Width="75.6" Height="28.35" Border.Lines="All" Text="[Table.Quantity]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text9" Left="500.85" Width="103.95" Height="28.35" Border.Lines="All" Text="[Table.UnitPrice]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text10" Left="604.8" Width="113.4" Height="28.35" Border.Lines="All" Text="[Table.TotalPrice]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="102.5" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

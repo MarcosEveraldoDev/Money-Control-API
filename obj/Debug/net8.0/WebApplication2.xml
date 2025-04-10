@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplication2</name>
+    </assembly>
+    <members>
+        <member name="M:WebApplication2.Controllers.AuthController.Register(WebApplication2.Models.DTOs.RegisterUserDto)">
+            <summary>
+            Registra um novo usuário previo com apenas email e senha.
+            </summary>
+        </member>
+        <member name="M:WebApplication2.Controllers.AuthController.Login(WebApplication2.Models.DTOs.LoginDTO)">
+            <summary>
+            Realiza o login do usuário.
+            </summary>
+        </member>
+        <member name="M:WebApplication2.Controllers.AuthController.Refresh(WebApplication2.Models.DTOs.RefreshTokenRequest)">
+            <summary>
+            Gera um Refresh Token a partir do ID do Usuario
+            </summary>
+        </member>
+        <member name="M:WebApplication2.Controllers.AuthController.Logout">
+            <summary>
+            Desloga o usuário.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication2.Controllers.AuthController.ConfirmEmail(System.String,System.String)">
+            <summary>
+            Confirma o e-mail do usuário.
+            </summary>
+        </member>
+        <member name="T:WebApplication2.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebApplication2.Migrations.removeFK">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.removeFK.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.removeFK.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.removeFK.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebApplication2.Migrations.products">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.products.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.products.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.products.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebApplication2.Migrations.CreateSalesTable">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.CreateSalesTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.CreateSalesTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.CreateSalesTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebApplication2.Migrations.PaymentMethod">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.PaymentMethod.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.PaymentMethod.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApplication2.Migrations.PaymentMethod.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="P:WebApplication2.Models.DTOs.LoginDTO.Email">
+            <summary>
+            O endereço de e-mail do usuário.
+            </summary>
+            <example>Example@example.com</example>
+        </member>
+        <member name="P:WebApplication2.Models.DTOs.LoginDTO.Password">
+            <summary>
+            A senha do usuário (mínimo de 8 caracteres).
+            </summary>
+            <example>Senha@123</example>
+        </member>
+    </members>
+</doc>
