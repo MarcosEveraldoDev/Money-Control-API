@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Security.Claims;
 using ACBrLib.Boleto;
 using DocumentFormat.OpenXml.Spreadsheet;
 using HotChocolate;
@@ -10,8 +11,10 @@ using WebApplication2.Interfaces;
 using WebApplication2.Models;
 using WebApplication2.Services;
 
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
 var builder = WebApplication.CreateBuilder(args);
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -61,18 +64,46 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("https://192.168.0.1",
-                              "https://localhost");
+                          policy.WithOrigins("https://192.168.0.121",
+                              "https://localhost")
+                          .WithMethods("GET", "POST", "PUT", "DELETE")
+                          .AllowAnyHeader()
+                          .AllowCredentials();
                       });
 });
 builder.Services.AddAuthentication(
         CertificateAuthenticationDefaults.AuthenticationScheme)
-    .AddCertificate();
+        .AddCertificate(options =>
+        {
+            options.Events = new CertificateAuthenticationEvents
+            {
+                OnCertificateValidated = context =>
+                {
+                    var claims = new[]
+                    {
+                    new Claim(
+                        ClaimTypes.NameIdentifier,
+                        context.ClientCertificate.Subject,
+                        ClaimValueTypes.String, context.Options.ClaimsIssuer),
+                    new Claim(
+                        ClaimTypes.Name,
+                        context.ClientCertificate.Subject,
+                        ClaimValueTypes.String, context.Options.ClaimsIssuer)
+                };
 
-builder.WebHost.ConfigureKestrel(serverOptions =>
+                    context.Principal = new ClaimsPrincipal(
+                        new ClaimsIdentity(claims, context.Scheme.Name));
+                    context.Success();
+
+                    return Task.CompletedTask;
+                }
+            };
+        });
+
+builder.WebHost.ConfigureKestrel(options =>
 {
-    serverOptions.ListenAnyIP(5119); // HTTP
-    serverOptions.ListenAnyIP(7129, listenOptions =>
+    options.ListenAnyIP(7129); // HTTP
+    options.ListenAnyIP(44300, listenOptions =>
     {
         listenOptions.UseHttps(); // HTTPS
     });
@@ -83,13 +114,12 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
 
 var app = builder.Build();
 
-
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseHsts();
 }
 
 using (var scope = app.Services.CreateScope())
@@ -97,12 +127,19 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     await RoleInitialize.InitializeRoles(services);
 
-    app.UseCors(MyAllowSpecificOrigins);
-    app.UseHttpsRedirection();
+
+
     app.UseStaticFiles();
+
     app.UseRouting();
-    app.UseAuthorization();
+
+    app.UseCors(MyAllowSpecificOrigins);
+
     app.UseAuthentication();
+
+    app.UseAuthorization();
+
     app.MapControllers();
+
     app.Run();
 }

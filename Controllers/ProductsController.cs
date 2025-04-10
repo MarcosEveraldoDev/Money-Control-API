@@ -7,7 +7,6 @@ namespace WebApplication2.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [DisableCors]
     public class ProductsController : Controller
     {
 
@@ -22,6 +21,7 @@ namespace WebApplication2.Controllers
 
 
         [HttpGet("GetId")]
+        [EnableCors("MyAllowSpecificOrigins")]
         //  [Authorize("User , Admin , Bronze , Prata , Ouro")]
         public async Task<IActionResult> GetId(int id)
         {
@@ -32,6 +32,8 @@ namespace WebApplication2.Controllers
         }
 
         [HttpGet("GetAll")]
+        [EnableCors("MyAllowSpecificOrigins")]
+
         //    [Authorize("User , Admin , Bronze , Prata , Ouro")]
         public async Task<IActionResult> GetAll()
         {
@@ -41,6 +43,8 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPost("Register")]
+        [EnableCors("MyAllowSpecificOrigins")]
+
         // [Authorize("User , Admin , Bronze , Prata , Ouro")]
         public async Task<IActionResult> Register([FromBody] ProductsDTO products)
         {
@@ -57,6 +61,8 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPut("Update")]
+        [EnableCors("MyAllowSpecificOrigins")]
+
         // [Authorize("User, Admin, Bronze, Prata, Ouro")]
         public async Task<IActionResult> UpdateId(int id, [FromBody] ProductsDTO products)
         {
@@ -72,6 +78,8 @@ namespace WebApplication2.Controllers
         }
 
         [HttpDelete("Delete")]
+        [EnableCors("MyAllowSpecificOrigins")]
+
         // [Authorize("User, Admin, Bronze, Prata, Ouro")]
         public async Task<IActionResult> DeleteId(int id)
         {

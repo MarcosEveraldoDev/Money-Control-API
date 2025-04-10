@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|solutionrelative:controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\controllers\\stockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|solutionrelative:controllers\\stockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|solutionrelative:controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\controllers\\stockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|solutionrelative:controllers\\stockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|solutionrelative:controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\controllers\\paycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|c:\\users\\desktop\\desktop\\money-control-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADD53928-BEA0-43D1-AF69-4FB22F5B151C}|WebApplication2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +42,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-10T18:08:52.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "StockController.cs",
               "DocumentMoniker": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\Controllers\\StockController.cs",
               "RelativeDocumentMoniker": "Controllers\\StockController.cs",
@@ -55,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ReportController.cs",
               "DocumentMoniker": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\Controllers\\ReportController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReportController.cs",
@@ -68,20 +89,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
               "ToolTip": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\Controllers\\ProductsController.cs",
               "RelativeToolTip": "Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAmwFEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T15:02:03.124Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "PayController.cs",
               "DocumentMoniker": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\Controllers\\PayController.cs",
               "RelativeDocumentMoniker": "Controllers\\PayController.cs",
@@ -89,12 +110,11 @@
               "RelativeToolTip": "Controllers\\PayController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T15:01:58.509Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T15:01:58.509Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -102,33 +122,33 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T15:01:46.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T15:01:46.376Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "TicketController.cs",
               "DocumentMoniker": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\Controllers\\TicketController.cs",
               "RelativeDocumentMoniker": "Controllers\\TicketController.cs",
               "ToolTip": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\Controllers\\TicketController.cs",
               "RelativeToolTip": "Controllers\\TicketController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T14:54:24.684Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Desktop\\Desktop\\Money-Control-API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAAAEMAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAwwHkAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T14:48:34.959Z"
+              "WhenOpened": "2025-04-10T14:48:34.959Z",
+              "EditorCaption": ""
             }
           ]
         }
