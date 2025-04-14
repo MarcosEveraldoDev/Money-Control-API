@@ -1,15 +1,15 @@
 using System.Reflection;
 using System.Security.Claims;
 using ACBrLib.Boleto;
-using DocumentFormat.OpenXml.Spreadsheet;
-using HotChocolate;
 using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data;
+using WebApplication2.GraphQL;
 using WebApplication2.Interfaces;
 using WebApplication2.Models;
 using WebApplication2.Services;
+
 
 System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
@@ -27,11 +27,16 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(xmlPath);
 });
 
-// Add connection to SQL Server
-var connSqlServer = builder.Configuration.GetConnectionString("SqlServer");
+
+// Registra normalmente para o Identity e serviços gerais
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connSqlServer)
-);
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+
+builder.Services.AddGraphQLServer().AddQueryType<Query>()
+                                   .AddProjections()
+                                   .AddFiltering()
+                                   .AddSorting()
+                                   .RegisterDbContext<AppDbContext>();
 
 // Add Identity services
 builder.Services.AddIdentity<User, IdentityRole>()
@@ -58,7 +63,7 @@ builder.Services.AddTransient<StockService>();
 builder.Services.AddTransient<SaleService>();
 builder.Services.AddTransient<ReportService>();
 builder.Services.AddTransient<ACBrBoleto>();
-builder.Services.AddGraphQL().AddQueryType<Query>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
@@ -102,11 +107,12 @@ builder.Services.AddAuthentication(
 
 builder.WebHost.ConfigureKestrel(options =>
 {
-    options.ListenAnyIP(7129); // HTTP
-    options.ListenAnyIP(44300, listenOptions =>
+    options.ListenAnyIP(5119); // HTTP
+    options.ListenAnyIP(7129, listenOptions =>
     {
         listenOptions.UseHttps(); // HTTPS
     });
+
 });
 
 
@@ -129,17 +135,20 @@ using (var scope = app.Services.CreateScope())
 
 
 
-    app.UseStaticFiles();
 
-    app.UseRouting();
-
-    app.UseCors(MyAllowSpecificOrigins);
-
-    app.UseAuthentication();
-
-    app.UseAuthorization();
-
-    app.MapControllers();
-
-    app.Run();
 }
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseCors(MyAllowSpecificOrigins);
+
+app.UseAuthentication();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.MapGraphQL("/graphql");
+
+app.Run();

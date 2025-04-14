@@ -32,12 +32,12 @@ namespace WebApplication2.Controllers
 
         }
 
-        public static async Task<bool> CpfExisteAsync(string cpf, AppDbContext context)
-        {
-            cpf = new string(cpf.Where(char.IsDigit).ToArray()); // Remove caracteres não numéricos
+        //public static async Task<bool> CpfExisteAsync(string cpf, AppDbContext context)
+        //{
+        //    cpf = new string(cpf.Where(char.IsDigit).ToArray()); // Remove caracteres não numéricos
 
-            return await context.Users.AnyAsync(u => u.CPF == cpf);
-        }
+        //    return await context.Users.AnyAsync(u => u.CPF == cpf);
+        //}
 
 
         /// <summary>
@@ -60,10 +60,10 @@ namespace WebApplication2.Controllers
             {
                 return BadRequest("Este e-mail já está cadastrado.");
             }
-            if (CpfExisteAsync(dto.CPF, _context).Result)
-            {
-                return BadRequest("Este CPF já está cadastrado.");
-            }
+            //if (CpfExisteAsync(dto.CPF, _context).Result)
+            //{
+            //    return BadRequest("Este CPF já está cadastrado.");
+            //}
 
             var user = new User
             {

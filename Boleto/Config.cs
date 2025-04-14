@@ -10,7 +10,7 @@
             var formFile = new FormFile(stream,
                                                0,
                                                stream.Length,
-                                               Path.GetFileName(filePath),
+                                               System.IO.Path.GetFileName(filePath),
                                                filePath.Split(@"\").Last());
 
             return formFile;

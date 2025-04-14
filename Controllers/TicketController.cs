@@ -17,20 +17,20 @@ namespace WebApplication2.Controllers
         public async Task<IActionResult> GerarPdf([FromServices] ACBrBoleto boleto, [FromServices] IWebHostEnvironment hostingEnvironment)
         {
             var codigo = "Boleto";
-            var path = Path.GetTempPath();
+            var path = System.IO.Path.GetTempPath();
             var nomeArquivo = $@"{codigo}.pdf";
 
             boleto.Config.Impressao.MostrarPreview = false;
             boleto.Config.Impressao.MostrarProgresso = false;
             boleto.Config.Impressao.MostrarSetup = false;
-            boleto.Config.Impressao.DirLogo = Path.Combine(hostingEnvironment.ContentRootPath, "Logos");
+            boleto.Config.Impressao.DirLogo = System.IO.Path.Combine(hostingEnvironment.ContentRootPath, "Logos");
 
-            boleto.Config.Impressao.NomeArquivo = Path.Combine(path, nomeArquivo);
+            boleto.Config.Impressao.NomeArquivo = System.IO.Path.Combine(path, nomeArquivo);
 
 
             boleto.IncluirTitulos(config.ini, BoletoTpSaida.PDF);
 
-            var fs = new FileStream(Path.Combine(path, nomeArquivo), FileMode.Open, FileAccess.Read);
+            var fs = new FileStream(System.IO.Path.Combine(path, nomeArquivo), FileMode.Open, FileAccess.Read);
 
             return File(fs, "application/pdf", nomeArquivo);
 

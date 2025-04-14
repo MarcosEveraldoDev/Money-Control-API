@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers"
+    "\\GraphQL"
   ],
-  "SelectedNode": "\\Controllers\\TicketController.cs",
+  "SelectedNode": "\\GraphQL\\Query.cs",
   "PreviewInSolutionExplorer": false
 }

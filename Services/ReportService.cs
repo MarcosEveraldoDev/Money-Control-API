@@ -177,7 +177,7 @@ namespace WebApplication2.Services
             worksheet.Column(5).Width = 15;
 
 
-            string filePath = Path.Combine(pastWay, "RelatorioVendas.xlsx");
+            string filePath = System.IO.Path.Combine(pastWay, "RelatorioVendas.xlsx");
 
             workbook.SaveAs(filePath);
         }

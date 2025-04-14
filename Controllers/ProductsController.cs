@@ -32,7 +32,7 @@ namespace WebApplication2.Controllers
         }
 
         [HttpGet("GetAll")]
-        [EnableCors("MyAllowSpecificOrigins")]
+        [DisableCors]
 
         //    [Authorize("User , Admin , Bronze , Prata , Ouro")]
         public async Task<IActionResult> GetAll()

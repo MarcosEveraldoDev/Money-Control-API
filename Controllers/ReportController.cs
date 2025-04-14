@@ -38,7 +38,7 @@ namespace WebApplication2.Controllers
         {
             try
             {
-                string reportPath = Path.Combine(Directory.GetCurrentDirectory(), "Reports", "Report01.frx");
+                string reportPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Reports", "Report01.frx");
 
                 using (Report report = new Report())
                 {
@@ -74,11 +74,11 @@ namespace WebApplication2.Controllers
         {
 
             var vendas = await _relatorioService.ObterItensVendaAsync();
-            ReportSaleExcel.Generate(vendas, Path.Combine(Directory.GetCurrentDirectory(), "Reports"));
+            ReportSaleExcel.Generate(vendas, System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Reports"));
 
             using (MemoryStream ms = new MemoryStream())
             {
-                using (XLWorkbook workbook = new XLWorkbook(Path.Combine(Directory.GetCurrentDirectory(), "Reports", "RelatorioVendas.xlsx")))
+                using (XLWorkbook workbook = new XLWorkbook(System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Reports", "RelatorioVendas.xlsx")))
                 {
                     workbook.SaveAs(ms);
                     ms.Position = 0;
