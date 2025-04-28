@@ -1,4 +1,8 @@
 ﻿using ClosedXML.Excel;
+using FastReport;
+using FastReport.Data;
+using FastReport.Export.PdfSimple;
+using FastReport.Utils;
 using Microsoft.EntityFrameworkCore;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
@@ -182,5 +186,13 @@ namespace WebApplication2.Services
             workbook.SaveAs(filePath);
         }
 
+    }
+
+    public class ReportPdfFastReport
+    {
+        public static void Generate(List<SaleItemDTO> sale, string pastWay)
+        {
+        
+        }
     }
 }

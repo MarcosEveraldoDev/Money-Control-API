@@ -69,13 +69,13 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("https://192.168.0.121",
-                              "https://localhost")
-                          .WithMethods("GET", "POST", "PUT", "DELETE")
+                          policy.WithOrigins("http://localhost:1420/")
+                          .AllowAnyMethod()
                           .AllowAnyHeader()
                           .AllowCredentials();
                       });
 });
+
 builder.Services.AddAuthentication(
         CertificateAuthenticationDefaults.AuthenticationScheme)
         .AddCertificate(options =>
@@ -110,7 +110,8 @@ builder.WebHost.ConfigureKestrel(options =>
     options.ListenAnyIP(5119); // HTTP
     options.ListenAnyIP(7129, listenOptions =>
     {
-        listenOptions.UseHttps(); // HTTPS
+        listenOptions.UseHttps("C:\\Users\\Desktop\\certificado.pfx", "123456789"); // HTTPS
+
     });
 
 });
@@ -132,9 +133,6 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     await RoleInitialize.InitializeRoles(services);
-
-
-
 
 }
 app.UseStaticFiles();

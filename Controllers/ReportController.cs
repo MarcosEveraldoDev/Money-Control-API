@@ -36,6 +36,7 @@ namespace WebApplication2.Controllers
         [HttpGet("Sales-FastReport")]
         public async Task<IActionResult> GerarRelatorioVendasFastReport()
         {
+
             try
             {
                 string reportPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Reports", "Report01.frx");
@@ -59,14 +60,16 @@ namespace WebApplication2.Controllers
                         report.Export(pdfExport, ms);
                         ms.Position = 0;
 
-                        return File(ms.ToArray(), "application/pdf", "RelatorioVendas.pdf");
+                        return File("application/pdf", "RelatorioVendas.pdf");
                     }
                 }
             }
+
             catch (Exception ex)
             {
                 return StatusCode(500, $"Erro ao gerar relatório: {ex.Message}");
             }
+
         }
 
         [HttpGet("Sales-Excel")]

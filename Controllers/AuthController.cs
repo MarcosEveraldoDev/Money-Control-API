@@ -60,10 +60,6 @@ namespace WebApplication2.Controllers
             {
                 return BadRequest("Este e-mail já está cadastrado.");
             }
-            //if (CpfExisteAsync(dto.CPF, _context).Result)
-            //{
-            //    return BadRequest("Este CPF já está cadastrado.");
-            //}
 
             var user = new User
             {
@@ -145,7 +141,14 @@ namespace WebApplication2.Controllers
 
             var tokenJWT = TokenService.Generate(user, roles);
 
-            return Json(tokenJWT);
+            var objectResponse = new
+            {
+                Token = tokenJWT,
+                User = user,
+                roles = roles
+            };
+
+            return Json(objectResponse);
 
         }
 

@@ -93,8 +93,5 @@ namespace WebApplication2.Controllers
             }
             return Json("Produto deletado com sucesso!");
         }
-
-
-
     }
 }
